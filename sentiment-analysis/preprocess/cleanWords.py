@@ -4,11 +4,11 @@ import re
 FILE_PATH = ""
 CLEAN_FILE_PATH = FILE_PATH + "_clean"
 
-def clean_data():
-    '''Remove all non-alphabetic characters. .'''
+def clean_data(filePath = FILE_PATH, cleanFilePath = CLEAN_FILE_PATH):
+    '''Remove all non-alphabetic characters.'''
 
-    with open(CLEAN_FILE_PATH, 'w') as writer:
-        for line in open(FILE_PATH):
+    with open(cleanFilePath, 'w') as writer:
+        for line in open(filePath):
             line=line.rstrip()  # Remove whitespace
             if line:
                 line=re.sub('[^A-Za-z\d]+', '', line)     #Match all non alphanumeric characters and get rid of them
