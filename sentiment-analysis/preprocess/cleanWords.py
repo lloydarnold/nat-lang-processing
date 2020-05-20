@@ -2,7 +2,7 @@ import os
 import re
 from pathlib import Path
 
-FILE_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw1"
+FILE_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw2"
 CLEAN_FILE_PATH = FILE_PATH + "_clean"
 
 def clean_data(filePath = FILE_PATH, cleanFilePath = CLEAN_FILE_PATH):

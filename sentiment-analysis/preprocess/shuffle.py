@@ -22,7 +22,10 @@ def shuffle(filesIn = [], fileOut=None):
 
 
 def main():
-    shuffle()
+    path1 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw1_clean"
+    path2 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw2_clean"
+    path3 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/finalTest"
+    shuffle([path1, path2], path3)
 
 
 if __name__ == '__main__':
