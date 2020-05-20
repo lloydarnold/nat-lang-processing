@@ -6,7 +6,7 @@ POS_REVIEWS_PATH_LAB = "/home/lloyd/Documents/programming/imperative/python/natl
 
 
 def add_labels(filePath=None, labelledFilePath=None, label=None):
-    if not(filePath and labelledFilePath and label):
+    if not(filePath and labelledFilePath and label != None):
         print("Not enough parameters passed to add labels")
         return
 
@@ -19,6 +19,7 @@ def add_labels(filePath=None, labelledFilePath=None, label=None):
 
 def main():
     print("Usage: add_labels( path for file in, path for file out, label to add )")
+
 
 if __name__ == "__main__":
     main()
