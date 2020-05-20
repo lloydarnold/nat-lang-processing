@@ -1,7 +1,7 @@
 def split_set(completeSet, testOut, trainOut, testSize):
     counter = 0
     with open(completeSet, 'r') as mainFile:
-        fileOut = open(testOut, 'w'):
+        fileOut = open(testOut, 'w')
         for line in mainFile:
             if counter == testSize:
                 fileOut.close()
