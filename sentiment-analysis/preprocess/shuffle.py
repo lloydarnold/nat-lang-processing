@@ -1,9 +1,9 @@
 import random
 
-def shuffle(filesIn = [], fileOut=Null):
+def shuffle(filesIn = [], fileOut=None):
     ''' Will read in multiple files and shuffle them together, assuming they're small enough
     to fit in ram. If they're not, need to re-implement '''
-    
+
     allData = []
     for file in filesIn:
         tempF = file.open(file, 'r')

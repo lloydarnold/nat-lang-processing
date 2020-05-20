@@ -5,7 +5,7 @@ NEG_REVIEWS_PATH_LAB = ""
 POS_REVIEWS_PATH_LAB = ""
 
 
-def add_labels(filePath=Null,labelledFilePath=Null, label=Null):
+def add_labels(filePath=None, labelledFilePath=None, label=None):
     if not(filePath and labelledFilePath and label):
         print("Not enough parameters passed to add labels")
         return
