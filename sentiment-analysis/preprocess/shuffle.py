@@ -6,7 +6,7 @@ def shuffle(filesIn = [], fileOut=None):
 
     allData = []
     for file in filesIn:
-        tempF = file.open(file, 'r')
+        tempF = open(file, 'r')
         allData += tempF.readlines()
         tempF.close()
 
