@@ -1,7 +1,7 @@
 import json
 import re
 
-WORD_MAP_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/wordMap.json"
+WORD_MAP_PATH = "wordMap.json"
 
 def build_word_map(filesIn=[], mapPath = WORD_MAP_PATH):
     ''' Reads in file, builds word map from this and then outputs it to a JSON '''
@@ -25,9 +25,7 @@ def tokenize(toTokenize = ""):
 
 
 def main():
-    file1In = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/pos_reviews_clean"
-    file2In = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/neg_reviews_clean"
-    build_word_map([file1In, file2In])
+    print("Usage: build_word_map( [paths for files to include], path for file out (leave blank to make file in cwd) )")
 
 
 if __name__ == '__main__':

@@ -19,9 +19,8 @@ def clean_data(filePath = FILE_PATH, cleanFilePath = CLEAN_FILE_PATH):
                     writer.write(line+'\n')
 
 def main():
-    # FILE_PATH = input("Please enter path of file to clean ")
+    print("Usage: clean_data( path for file in, path for file out )")
 
-    clean_data()
 
 if __name__ == "__main__":
     main()

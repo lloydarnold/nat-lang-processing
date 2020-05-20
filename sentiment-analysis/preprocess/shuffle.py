@@ -22,11 +22,7 @@ def shuffle(filesIn = [], fileOut=None):
 
 
 def main():
-    path1 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/pos_rev_lab"
-    path2 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/neg_rev_lab"
-    path3 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/finalData"
-    shuffle([path1, path2], path3)
-
+    print("Usage: shuffle( [paths for files to be shuffled together], output file path ) ")
 
 if __name__ == '__main__':
     main()

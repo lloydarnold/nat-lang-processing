@@ -18,9 +18,7 @@ def add_labels(filePath=None, labelledFilePath=None, label=None):
 
 
 def main():
-    add_labels(NEG_REVIEWS_PATH, NEG_REVIEWS_PATH_LAB, 0)
-    add_labels(POS_REVIEWS_PATH, POS_REVIEWS_PATH_LAB, 1)
-
+    print("Usage: add_labels( path for file in, path for file out, label to add )")
 
 if __name__ == "__main__":
     main()
