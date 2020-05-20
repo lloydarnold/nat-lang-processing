@@ -22,9 +22,9 @@ def shuffle(filesIn = [], fileOut=None):
 
 
 def main():
-    path1 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw1_clean"
-    path2 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw2_clean"
-    path3 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/finalTest"
+    path1 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/pos_rev_lab"
+    path2 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/neg_rev_lab"
+    path3 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/finalData"
     shuffle([path1, path2], path3)
 
 

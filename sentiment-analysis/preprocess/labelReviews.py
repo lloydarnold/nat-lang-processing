@@ -1,8 +1,8 @@
-NEG_REVIEWS_PATH = ""
-POS_REVIEWS_PATH = ""
+NEG_REVIEWS_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/pos_reviews_clean"
+POS_REVIEWS_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/pos_reviews_clean"
 
-NEG_REVIEWS_PATH_LAB = ""
-POS_REVIEWS_PATH_LAB = ""
+NEG_REVIEWS_PATH_LAB = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/neg_rev_lab"
+POS_REVIEWS_PATH_LAB = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/pos_rev_lab"
 
 
 def add_labels(filePath=None, labelledFilePath=None, label=None):
@@ -18,9 +18,8 @@ def add_labels(filePath=None, labelledFilePath=None, label=None):
 
 
 def main():
-    testPath1 = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw2_clean"
-    testPath2 = testPath1 + "_lab"
-    add_labels(testPath1, testPath2, 1)
+    add_labels(NEG_REVIEWS_PATH, NEG_REVIEWS_PATH_LAB, 0)
+    add_labels(POS_REVIEWS_PATH, POS_REVIEWS_PATH_LAB, 1)
 
 
 if __name__ == "__main__":

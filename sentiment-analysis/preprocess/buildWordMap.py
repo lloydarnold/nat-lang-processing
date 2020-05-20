@@ -1,19 +1,20 @@
 import json
 import re
 
-WORD_MAP_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/wordMap.json"
+WORD_MAP_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/processed/wordMap.json"
 
-def build_word_map(fileIn, mapPath = WORD_MAP_PATH):
+def build_word_map(filesIn=[], mapPath = WORD_MAP_PATH):
     ''' Reads in file, builds word map from this and then outputs it to a JSON '''
-    wordMap = {'A':0} ## Initialise dictionary -- 'A' is one of the most commonly used words, so will be present
+    wordMap = {'a':0}         ## Initialise dictionary -- 'A' is one of the most commonly used words, so will be present
     wordCount = 1
 
-    for line in open(fileIn):
-        tokens = tokenize(line)
-        for token in tokens:
-            if token not in wordMap:
-                wordMap[token] = wordCount
-                wordCount += 1
+    for file in filesIn:
+        for line in open(file):
+            tokens = tokenize(line)
+            for token in tokens:
+                if token not in wordMap:
+                    wordMap[token] = wordCount
+                    wordCount += 1
 
     with open(mapPath, "w") as outfile:
         json.dump(wordMap, outfile)
@@ -24,8 +25,9 @@ def tokenize(toTokenize = ""):
 
 
 def main():
-    fileIn = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/test/testRaw1_clean"
-    build_word_map(fileIn)
+    file1In = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/pos_reviews_clean"
+    file2In = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data/raw/neg_reviews_clean"
+    build_word_map([file1In, file2In])
 
 
 if __name__ == '__main__':
