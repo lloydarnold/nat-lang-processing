@@ -7,15 +7,12 @@ also of use when dealing with datasets which are larger than can be stored
 in memory. Whilst that isn't the case with this project, I felt that
 it would be useful to work out how to do this now.
 
-Reading the documentation on this, I realised that, as this datset is text
-only, I could encode it with the type `tf.train.BytesList`.
-We are given this sample code:
-
-``` python
-def _bytes_feature(value):
-  """Returns a bytes_list from a string / byte."""
-  if isinstance(value, type(tf.constant(0))):
-    value = value.numpy() # BytesList won't unpack a string from an EagerTensor.
-  return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
-```
- Therefore, we will want to use something similar to this in our writer.  
+Reading the documentation on this, we are told that there are three data types
+that we can use. These are `tf.train.BytesList`, `tf.train.FloatList` and 
+`tf.train.Int64List`, and can each encode a number of different data types.
+Initially, I intended to encode the entire dataset as strings, using `tf.train.BytesList`
+but, after considering this a little more, I realised that this would not actually
+be a brilliant optimisation, as it would still leave a substantive amount of processing
+to be done each time the dataset was read. Therefore, to minimise this, I decided to 
+replace words with their map index at this stage, and thus store Integers in the place
+of each word. 
