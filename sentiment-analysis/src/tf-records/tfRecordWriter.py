@@ -3,6 +3,10 @@ import re
 import numpy as np
 import json
 
+""" This program will read in netflix review data from preprocessed files and then format / output them
+ to a tensorflow record format. The idea of this is that it will allow for quicker access in the actual training. """
+
+
 WORD_MAP_PATH = "/home/lloyd/Documents/programming/imperative/python/natlangprocessing/sentiment-analysis/data" \
                 "/processed/wordMap.json"
 
@@ -66,6 +70,7 @@ def add_line_to_tf_records(line, tfWriter, wordMap):
 
     tfWriter.write(nextLine.SerializeToString())
 
+
 def tokenize(toTokenize=""):
     return re.split("\s", toTokenize)
 
@@ -77,6 +82,7 @@ def create_record(dataPath, outPath, wordMapPath=WORD_MAP_PATH):
     with tf.python_io.TFRecordWriter(outPath) as tf_writer:
         for line in open(dataPath):
             add_line_to_tf_records(line, tf_writer, wordMap)
+
     print("It... worked ?? ")
 
 
