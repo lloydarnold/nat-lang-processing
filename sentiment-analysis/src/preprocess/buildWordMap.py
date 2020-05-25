@@ -3,9 +3,10 @@ import re
 
 WORD_MAP_PATH = "wordMap.json"
 
-def build_word_map(filesIn=[], mapPath = WORD_MAP_PATH):
-    ''' Reads in file, builds word map from this and then outputs it to a JSON '''
-    wordMap = {'a':0}         ## Initialise dictionary -- 'A' is one of the most commonly used words, so will be present
+
+def build_word_map(filesIn=(), mapPath=WORD_MAP_PATH):
+    """ Reads in file, builds word map from this and then outputs it to a JSON """
+    wordMap = {'a': 0}  # Initialise dictionary -- 'A' is one of the most commonly used words, so will be present
     wordCount = 1
 
     for file in filesIn:
@@ -20,7 +21,7 @@ def build_word_map(filesIn=[], mapPath = WORD_MAP_PATH):
         json.dump(wordMap, outfile)
 
 
-def tokenize(toTokenize = ""):
+def tokenize(toTokenize=""):
     return re.split("\s", toTokenize)
 
 
