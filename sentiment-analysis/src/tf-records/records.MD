@@ -8,6 +8,14 @@ in memory. Whilst that isn't the case with this project, I felt that
 it would be useful to work out how to do this now.
 
 Reading the documentation on this, I realised that, as this datset is text
-only, I could encode it with the type `tf.train.BytesList`. In order to do
-this, the string data type needs to be first encoded as bytes, using `String.encode()`.
+only, I could encode it with the type `tf.train.BytesList`.
+We are given this sample code:
 
+``` python
+def _bytes_feature(value):
+  """Returns a bytes_list from a string / byte."""
+  if isinstance(value, type(tf.constant(0))):
+    value = value.numpy() # BytesList won't unpack a string from an EagerTensor.
+  return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
+```
+ Therefore, we will want to use something similar to this in our writer.  
