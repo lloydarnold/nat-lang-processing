@@ -15,4 +15,8 @@ but, after considering this a little more, I realised that this would not actual
 be a brilliant optimisation, as it would still leave a substantive amount of processing
 to be done each time the dataset was read. Therefore, to minimise this, I decided to 
 replace words with their map index at this stage, and thus store Integers in the place
-of each word. 
+of each word. This was an improvement I observed by reading the work of Artem Oppenheimer,
+whose medium article & github repo (listed in README.md) have proven invaluable.
+
+By encoding the words in this way, we will reduce the cost of our lookup algorithm from O(n),
+as is the case with our word map, to O(1), because it can be done using an array data structure. 
